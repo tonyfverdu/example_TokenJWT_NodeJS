@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import colors from 'colors'
 import createHttpError from 'http-errors'
 import User from '../models/User.js'
@@ -143,7 +142,6 @@ export async function createUser(req, resp, next) {
   //   message: `New User created !!`
   // })
 }
-
 
 //  2.1.-  "getter" of all registerd users in MongoDB  ==>>  getAllUsers
 export async function getAllUsers(req, resp) {

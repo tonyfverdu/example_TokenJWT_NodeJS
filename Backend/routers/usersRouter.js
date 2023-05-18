@@ -12,7 +12,6 @@ import { registerValidationUser, loginValidation } from '../lib/userRules.js'
 const router = express.Router()
 
 router.get('/', controller.getAllUsers)
-// router.get('/user', auth, controller.getUser)
 router.get('/userbyemail/:email', auth, controller.getUserByEmail)
 router.get('/user', auth, controller.getUser)
 router.patch('/user', controller.patchUser)

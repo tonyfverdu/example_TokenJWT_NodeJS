@@ -3,8 +3,6 @@ import httpErrors from 'http-errors'
 
 
 export default async function auth(req, resp, next) {
-  // console.log('entro en autorizacion')
-  // console.log('req.headers:  ', req.headers)
 
   const token = req.headers['x-authorization']
   // const token = req.cookies.token
