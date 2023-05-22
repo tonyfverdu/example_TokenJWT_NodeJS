@@ -71,6 +71,7 @@ userSchema.methods.generateAuthToken = function () {
   const token = jwt
     .sign({ _id: user._id }, superSecretKey, { expiresIn: '2h' })
     .toString()
+
   user.tokens.push(token)
 
   return token

@@ -1,0 +1,20 @@
+/*   ////////////////////////////////////////       */
+.contHomePlayer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  padding: 0%;
+  margin: 0% auto;
+  background-image: linear-gradient(to top, rgba(3, 3, 3, 0.93) 16%, rgba(3, 3, 3, 0.2) 36%, rgba(3, 3, 3, 0.93)), url(../src/images/theBeatles/B&W1.jpg);
+  background-repeat: no-repeat;
+  background-position: 0.2rem 6rem;
+  background-size: 36% 42%;
+  background-color: rgba(3, 3, 3, 0.93);
+}
+
+/*# sourceMappingURL=HomePlayer.css.map */

@@ -1,0 +1,194 @@
+@use '../layouts' as l;
+@use '../myvariables' as v;
+@use '../designElement' as d;
+@use '../neumorphismus' as n;
+@use '../glassMorphismus' as g;
+
+.containerErrorGlobal {
+  @include l.layoutFlexboxColumCenter;
+  height: 82vh;
+  margin: 0% auto;
+  @include d.backgroundImage;
+  background-image: url('../../src/assets/images/404Images/404-error-page2.jpg'), url('../../src/assets/images/404Images/404-error-page1.jpg');
+  background-position: left bottom, right top;
+  background-repeat: no-repeat, no-repeat;
+
+  &>.containerMessage {
+    @include g.displayGlassmorphismus;
+    @include l.layoutFlexboxColumCenter;
+    align-items: center;
+    justify-content: center;
+    width: 22%;
+    height: auto;
+    margin: 1% auto;
+    padding: 1%;
+    backdrop-filter: blur(8.4px);
+    border-radius: 9px;
+
+    &>span {
+      @include l.layoutFlexboxRowCenter;
+      @include d.configurationText1 (v.$colorDunkel, 0.8rem);
+      text-align:center;
+      margin: 1% auto;
+      &:first-child {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &>.containerError {
+    @include l.layoutFlexboxRowCenter;
+    width: 100vw;
+    height: 40vh;
+    padding: 0%;
+    margin: 0% auto;
+
+    .containerErrorPage {
+      @include l.layoutFlexboxColumCenter;
+      width: 16rem;
+      height: 16rem;
+      @include d.backgroundImage;
+      border-radius: 50%;
+      animation: backgroundImageAnimation 26s ease-in-out infinite alternate;
+
+      &>.containerHeaderError {
+        @include l.layoutFlexboxRowCenter;
+        justify-content: flex-start;
+        @include d.desigHeader (v.$backgroundColorIni2);
+        @include g.boxShadowGlassMorpCard;
+        align-items: flex-start;
+        width: 68%;
+        height: auto;
+        padding: 1%;
+        margin: 1% auto;
+        border-radius: 3px;
+
+        &>.containerName {
+          @include d.desig_H_element (v.$colorHell, 0.58rem);
+          margin: 0% auto;
+          text-align: center;
+        }
+      }
+
+      &>.containerLink {
+        @include l.layoutFlexboxRowCenter;
+        margin-top: 1%;
+
+        &>a {
+          @include d.buttonType1;
+          border: 1px solid v.$backgroundColorRowTable;
+          @include d.configurationText2 (v.$colorNavy, 0.67rem);
+          padding: 2% 4%;
+          border-radius: 3px;
+          text-decoration: none;
+          font-weight:500;
+          transition: all 0.35s ease;
+
+          &:hover,
+          &:focus {
+            cursor: pointer;
+            transform: scale(0.94);
+            background: linear-gradient(315deg, #8f8f8f, #414141);
+            box-shadow: -2px -2px 5px #545454,
+              1px 1px 4px #bababa;
+            color: v.$colorRed;
+            font-size: 0.68rem;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes backgroundImageAnimation {
+  0% {
+    background: url('../../src/assets/images/404Images/error404_1.jpg');
+  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 1;
+  }
+
+  10% {
+    background: url('../../src/assets/images/404Images/error404_2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.98;
+  }
+
+  20% {
+    background: url('../../src/assets/images/404Images/error404_3.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.96;
+  }
+
+  30% {
+    background: url('../../src/assets/images/404Images/error404_4.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.94;
+  }
+
+  40% {
+    background: url('../../src/assets/images/404Images/error404_5.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.92;
+  }
+
+  50% {
+    background: url('../../src/assets/images/404Images/error404_6.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.90;
+  }
+
+  60% {
+    background: url('../../src/assets/images/404Images/error404_7.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.92;
+  }
+
+  70% {
+    background: url('../../src/assets/images/404Images/error404_8.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.94;
+  }
+
+  80% {
+    background: url('../../src/assets/images/404Images/error404_9.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.96;
+  }
+
+  90% {
+    background: url('../../src/assets/images/404Images/error404_7.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.98;
+  }
+
+  100% {
+    background: url('../../src/assets/images/404Images/error404_6.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 1;
+  }
+}

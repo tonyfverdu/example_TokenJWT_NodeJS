@@ -1,0 +1,249 @@
+/*   ////////////////////////////////////////       */
+.containerErrorGlobal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 82vh;
+  margin: 0% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../../src/assets/images/404Images/404-error-page2.jpg"), url("../../src/assets/images/404Images/404-error-page1.jpg");
+  background-position: left bottom, right top;
+  background-repeat: no-repeat, no-repeat;
+}
+.containerErrorGlobal > .containerMessage {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.4px);
+  border: 1px solid rgba(255, 255, 255, 0.37);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 22%;
+  height: auto;
+  margin: 1% auto;
+  padding: 1%;
+  backdrop-filter: blur(8.4px);
+  border-radius: 9px;
+}
+.containerErrorGlobal > .containerMessage > span {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  text-align: justify;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgb(10, 10, 10);
+  margin: 0% auto;
+  text-align: center;
+  margin: 1% auto;
+}
+.containerErrorGlobal > .containerMessage > span:first-child {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.containerErrorGlobal > .containerError {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  width: 100vw;
+  height: 40vh;
+  padding: 0%;
+  margin: 0% auto;
+}
+.containerErrorGlobal > .containerError .containerErrorPage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  width: 16rem;
+  height: 16rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  animation: backgroundImageAnimation 26s ease-in-out infinite alternate;
+}
+.containerErrorGlobal > .containerError .containerErrorPage > .containerHeaderError {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0% auto;
+  padding: 2% auto;
+  background-color: rgb(205, 204, 204);
+  background: rgba(146, 153, 176, 0.4);
+  box-shadow: 0 1.2rem 2.1rem 0 rgba(1, 1, 68, 0.518) inset;
+  backdrop-filter: blur(5.5px);
+  border-radius: 9px;
+  border: 0.18rem solid rgb(224, 224, 236);
+  align-items: flex-start;
+  width: 68%;
+  height: auto;
+  padding: 1%;
+  margin: 1% auto;
+  border-radius: 3px;
+}
+.containerErrorGlobal > .containerError .containerErrorPage > .containerHeaderError > .containerName {
+  color: rgb(246, 240, 240);
+  text-align: center;
+  font-size: 0.58rem;
+  font-weight: bold;
+  margin: 3% auto;
+  text-shadow: -4px -3px 4px rgba(0, 0, 0, 0.39), 2px 3px 4px rgba(0, 0, 0, 0.3);
+  margin: 0% auto;
+  text-align: center;
+}
+.containerErrorGlobal > .containerError .containerErrorPage > .containerLink {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1%;
+}
+.containerErrorGlobal > .containerError .containerErrorPage > .containerLink > a {
+  display: block;
+  float: right;
+  padding: 4% 9%;
+  background-color: rgb(167, 166, 166);
+  border: none;
+  border-radius: 9px;
+  margin: 0% auto;
+  color: rgb(10, 10, 10);
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border: 1px solid rgba(202, 202, 220, 0.7);
+  position: relative;
+  text-align: justify;
+  font-size: 0.67rem;
+  font-weight: bold;
+  color: rgba(2, 2, 101, 0.9);
+  margin: 1% 2%;
+  padding: 1%;
+  padding: 2% 4%;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.35s ease;
+}
+.containerErrorGlobal > .containerError .containerErrorPage > .containerLink > a:hover, .containerErrorGlobal > .containerError .containerErrorPage > .containerLink > a:focus {
+  cursor: pointer;
+  transform: scale(0.94);
+  background: linear-gradient(315deg, #8f8f8f, #414141);
+  box-shadow: -2px -2px 5px #545454, 1px 1px 4px #bababa;
+  color: rgba(207, 35, 35, 0.9);
+  font-size: 0.68rem;
+  font-weight: bolder;
+}
+
+@keyframes backgroundImageAnimation {
+  0% {
+    background: url("../../src/assets/images/404Images/error404_1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 1;
+  }
+  10% {
+    background: url("../../src/assets/images/404Images/error404_2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.98;
+  }
+  20% {
+    background: url("../../src/assets/images/404Images/error404_3.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.96;
+  }
+  30% {
+    background: url("../../src/assets/images/404Images/error404_4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.94;
+  }
+  40% {
+    background: url("../../src/assets/images/404Images/error404_5.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.92;
+  }
+  50% {
+    background: url("../../src/assets/images/404Images/error404_6.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+  }
+  60% {
+    background: url("../../src/assets/images/404Images/error404_7.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.92;
+  }
+  70% {
+    background: url("../../src/assets/images/404Images/error404_8.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.94;
+  }
+  80% {
+    background: url("../../src/assets/images/404Images/error404_9.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.96;
+  }
+  90% {
+    background: url("../../src/assets/images/404Images/error404_7.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.98;
+  }
+  100% {
+    background: url("../../src/assets/images/404Images/error404_6.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=Error.css.map */

@@ -1,0 +1,400 @@
+@use '../../layouts' as l;
+@use '../../myvariables' as v;
+@use '../../designElement' as d;
+@use '../../neumorphismus' as n;
+
+
+.containerRegDataHalf {
+  @include l.layoutFlexboxColumCenter;
+  @include n.neuMorphismus6;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.1% auto;
+  margin: 0% auto;
+  margin-bottom: 0.20%;
+
+  &>.headerOfCreateAccount {
+    @include d.desigHeader (transparent);
+    @include l.layoutFlexboxRowCenter;
+    width: auto;
+    padding: 0%;
+    margin: 0%;
+    margin-left: 2%;
+    text-shadow: v.$textShadow1;
+
+    &>.titelOfCreateAccount {
+      @include d.desig_H_element (v.$colorTextIni, 0.8rem);
+      font-weight: bolder;
+      text-shadow: v.$textShadow1;
+      margin: 0%;
+      padding: 0%;
+    }
+  }
+
+  &>.dataOfAddress {
+    @include l.layoutFlexboxColumCenter;
+    width: 94%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0% auto;
+    margin: 0% auto;
+    margin-left: 3%;
+    margin-bottom: 0.25%;
+
+    &>.container2Fields {
+      @include l.layoutFlexboxRowCenter;
+      width: 94%;
+      margin: 0.3% auto;
+      padding: 0%;
+
+      &:nth-child(1) {
+        margin-left: 1.55%;
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        margin-left: 1.55%;
+        width: 100%;
+      }
+
+      &:nth-child(3) {
+        width: 64%;
+        margin-right: 50%;
+      }
+
+      &>.containerInputLabel {
+        @include l.layoutFlexboxRowCenter;
+        margin: 0%;
+        padding: 0%;
+
+        &>.labelInput {
+          @include d.configurationText2 (v.$colorDunkelSecondary, 0.7rem);
+          @include l.layoutFlexboxRowCenter;
+          justify-content: flex-end;
+          width: auto;
+          font-weight: bold;
+          padding: 0%;
+          margin:0%;
+        }
+
+
+        &>.inputText {
+          @include l.layoutFlexboxRowCenter;
+          @include d.configurationText1 (v.$backgroundColorDunkelGray4, 0.72rem);
+          padding: 0%;
+          margin-bottom: 0%;
+        }
+
+        &>.inputStreet {
+          width: 30rem;
+          margin-right: 10%;
+          margin-left: 2%;
+        }
+
+        &>.inputNumberStreet {
+          width: 2.6rem;
+          margin-left: 2%;
+        }
+
+        &>.inputCity {
+          width: 8rem;
+        }
+
+        &>.inputState {
+          width: 8rem;
+        }
+
+        &>.inputZip {
+          width: 4rem;
+        }
+
+        &>.inputCountry {
+          width: 8rem;
+        }
+      }
+    }
+  }
+}
+
+//  Pay Process
+.dataOfPay {    
+  @include l.layoutFlexboxColumCenter;
+  justify-content: flex-start;
+  align-items: flex-start;
+  @include n.neuMorphismus6;
+  padding: 0% auto;
+  margin: 0%;
+  margin-bottom: 0.25%;
+
+  &>.headerSubtitelFormPay {
+    @include d.desigHeader (transparent);
+    @include l.layoutFlexboxRowCenter;
+    justify-content: flex-start;
+    width: auto;
+    height: 80%;
+    padding: 0%;
+    margin: 0%;
+    margin-top: 0.5%;
+    margin-left: 1.5%;
+    text-shadow: v.$textShadow1;
+
+    &>.titelSubtitelFormPay {
+      @include d.desig_H_element (v.$colorTextIni, 0.8rem);
+      font-weight: bold;
+      margin: 0%;
+      padding: 0%;
+    }
+  }
+
+  &>.containerCreditDebitCard {
+    @include l.layoutFlexboxColumCenter;
+    width: 96%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0% auto;
+    margin: 0%;
+    margin-left: 3%;
+    margin-bottom: 0.25%;
+
+    &>.container3Fields {
+      @include l.layoutFlexboxRowCenter;
+      justify-content: flex-start;
+      margin: 0%;
+      padding: 0%;
+
+      &>.labelHolder {
+        @include d.configurationText2 (v.$colorTextIni, 0.7rem);
+        width: 4.7rem;
+        font-weight: bolder;
+        padding: 0%;
+        margin: 0%;
+        text-align: left;
+      }
+
+      &>.fullname {
+        @include l.layoutFlexboxRowCenter;
+        width: 68%;
+        margin-right: 2%;
+
+        &>.container2Fields {
+          @include l.layoutFlexboxRowCenter;
+          justify-content: flex-start;
+          margin: 0%;
+          padding: 0%;
+
+          &>.containerInputLabel {
+            @include l.layoutFlexboxRowCenter;
+            margin: 0%;
+            padding: 0.1%;
+
+            &>.labelInput {
+              @include d.configurationText2 (v.$colorDunkelSecondary, 0.7rem);
+              width: auto;
+              font-weight: bolder;
+              margin-bottom: 0%;
+            }
+
+            &>.inputText {
+              @include l.layoutFlexboxRowCenter;
+              width: 9rem;
+              @include d.configurationText1 (v.$backgroundColorDunkelGray4, 0.72rem);
+            }
+          }
+        }
+      }
+
+      &>.containerTypePay {
+        @include l.layoutFlexboxRowCenter;
+        width: 15rem;
+        margin-left: 4%;
+
+        &>.containerInputLabel {
+          @include l.layoutFlexboxRowCenter;
+          margin: 0%;
+          margin-bottom: 0%;
+          padding: 0.1%;
+
+          &>.labelInput {
+            @include d.configurationText2 (v.$colorDunkelSecondary, 0.7rem);
+            font-weight: bolder;
+            margin-bottom: 0%;
+          }
+
+          &>.selectTypePay {
+            @include l.layoutFlexboxRowCenter;
+            @include d.configurationText1 (v.$backgroundColorDunkelGray5, 0.7rem);
+            width: 8rem;
+            transition: all ease 0.25s;
+
+            &>option {
+              @include d.configurationText1 (v.$backgroundColorDunkelGray4, 0.7rem);
+            }
+
+            &:hover,
+            &:focus {
+              cursor: pointer;
+              border: 2px solid v.$colorbackgroudneuOrange;
+              color: v.$backgroundColorDunkelGray5;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    &>.container1Field {
+      @include l.layoutFlexboxRowCenter;
+      justify-content: flex-start;
+      margin-bottom: 2%;
+
+      &>.containerInputLabel {
+        @include l.layoutFlexboxRowCenter;
+        margin: 0% auto;
+        padding: 0%;
+
+        &>.labelInput {
+          width: 125px;
+          font-size: 0.7rem;
+          text-align: left;
+        }
+
+        &:nth-child(1) {
+
+          &>label {
+            margin-right: 2%;
+            margin-left: 0%;
+            width: 4.7rem;
+          }
+
+          &>input {
+            width: 12.9rem;
+          }
+        }
+
+        &:nth-child(2) {
+          margin-left: 0.8%;
+
+          &>label {
+            width: 5.7rem;
+          }
+
+        }
+
+        &>.inputText {
+          @include l.layoutFlexboxRowCenter;
+          width: 8rem;
+          @include d.configurationText1 (v.$backgroundColorDunkelGray4, 0.72rem);
+        }
+
+        &>#expirationData {
+          width: 6.5rem;
+        }
+      }
+
+      &>.securityCode {
+        @include l.layoutFlexboxRowCenter;
+        margin: 0%;
+        padding: 0%;
+        margin-left: 6.4%;
+
+        &>.containerInputLabel {
+          @include l.layoutFlexboxRowCenter;
+          margin: 0%;
+          padding: 0%;
+
+          &>.labelInput {
+            width: 5rem;
+            font-size: 0.7rem;
+          }
+
+          &>.inputText {
+            width: 2.3rem;
+            font-size: 0.72rem;
+            margin-left: 1%;
+          }
+        }
+
+      }
+
+      &>.acceptConditions {
+        @include l.layoutFlexboxRowCenter;
+        justify-content: flex-end;
+        margin: 0%;
+        margin-left: 4%;
+
+        &>.containerInputLabel {
+          @include l.layoutFlexboxRowCenter;
+          justify-content: flex-start;
+          padding: 0%;
+          margin: 0%;
+
+          &>.labelInput {
+            @include d.configurationText1 (v.$colorDarkBlueNavy, 0.6rem);
+            width: 110px;
+            font-weight: 700;
+            margin-left: 10%;
+          }
+
+          &>.inputText {
+            @include l.layoutFlexboxRowCenter;
+            @include d.configurationText1 (v.$backgroundColorDunkelGray4, 0.72rem);
+            transform: scale(2);
+            width: 12%;
+            margin: 0%;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.figureImageCreditCard {
+  @include d.figure;
+  position: absolute;
+  bottom: 25.5%;
+  right: -8%;
+  width: 40%;
+  height: 0.3rem;
+  padding: 0%;
+  margin: 0%;
+  margin-bottom: 0.5%;
+
+  &>.textAccept {
+    @include d.configurationText2 (v.$backgroundColorDunkelGray4, 0.6rem);
+    margin-right: 2%;
+  }
+
+  &>.imageCardCreditst {
+    @include d.imageGenerall;
+    width: 20%;
+    padding: 0%;
+  }
+}
+
+.labelInput {
+  @include d.configurationText2 (v.$colorDunkelSecondary, 0.7rem);
+  font-weight: bold;
+  padding: 0%;
+  text-align: left;
+}
+
+.inputText {
+  @include l.layoutFlexboxRowCenter;
+  width: 60%;
+  @include d.configurationText1 (v.$backgroundColorDunkelGray4, 0.72rem);
+  padding: 0%;
+  text-align: left;
+  transition: all 0.25s ease;
+  border: 1px solid v.$backgroundColorDunkelGray4;
+
+  &:hover,
+  &:focus {
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      border: 2px solid v.$colorbackgroudneuOrange;
+    }
+  }
+}

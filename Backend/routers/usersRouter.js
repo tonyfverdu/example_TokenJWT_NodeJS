@@ -18,7 +18,8 @@ router.patch('/user', controller.patchUser)
 router.post('/register', validateInputs(registerValidationUser), controller.createUser)
 router.post('/login', validateInputs(loginValidation), controller.login)
 router.get('/loggedIn', auth, controller.isLoggedIn)
-router.post('/logout', auth, controller.logout)
+// router.post('/logout', auth, controller.logout)
+router.post('/logout', controller.logout)
 // router.get('/usersongslike/:email', controller.getUserSongsLike)
 
 export default router

@@ -1,0 +1,46 @@
+@use '../layouts' as l;
+@use '../myvariables' as v;
+@use '../designElement' as d;
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.contMyCarousel {
+  @include l.layoutFlexboxRowCenter;
+  width: 1200px;
+  height: 582px;
+  padding:1%;
+  margin:0% auto;
+
+  &>.carrouselItem {
+    @include l.layoutFlexboxRowCenter;
+    height: 582px;
+    padding: 0%;
+    margin: 0% auto;
+
+    &>.imageCarousel {
+      @include l.layoutFlexboxRowCenter;
+      @include d.imageGenerall;
+      height: 560px;
+      object-fit:cover;
+      padding: 0%;
+      margin: 0% auto;
+    }
+  }
+}
+
+.titleOfSlide {
+  @include d.desig_H_element (v.$colorDunkel, 2.1rem);
+  @include l.layoutFlexboxRowCenter;
+  margin: 0% auto;
+  padding: 1%;
+}
+
+.textImageCarousel {
+  @include d.desig_H_element (v.$colorNavy, 1.1rem);
+  @include l.layoutFlexboxRowCenter;
+  width: auto;
+  height: 2.4rem;
+  margin: 0% auto;
+  padding: 2% auto;
+  border-radius: 9px;
+  background-color: v.$backgroundColorIniT4;
+}

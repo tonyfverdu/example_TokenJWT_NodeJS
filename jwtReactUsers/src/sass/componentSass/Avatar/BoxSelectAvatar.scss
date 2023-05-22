@@ -1,0 +1,188 @@
+@use '../../layouts' as l;
+@use '../../myvariables' as v;
+@use '../../designElement' as d;
+@use '../../neumorphismus' as n;
+
+.contAllAvatar {
+  @include l.layoutFlexboxColumCenter;
+  justify-content: flex-start;
+  @include n.neuMorphismus0;
+  width: 22rem;
+  height: 7.3rem;
+  padding: 1%;
+  margin: 0%;
+
+  &>.containerSelectAvatar {
+    @include l.layoutFlexboxColumCenter;
+    justify-content: flex-start;
+    border-radius: 6px;
+    padding: 0%;
+    margin: 0%;
+
+    &>.headerTitleBoxAvatar {
+      @include d.desigHeader (transparent);
+      @include l.layoutFlexboxRowCenter;
+      justify-content: flex-start;
+      padding: 0.2%;
+      margin: 0.3% 0%;
+      margin-bottom: 1%;
+
+      &>.titleBoxAvatar {
+        @include d.desig_H_element (v.$colorTextIni, 0.75rem);
+        font-weight: bold;
+        text-align: left;
+        width: 100%;
+        margin: 0%;
+        margin-left: 2%;
+        padding: 0%;
+        text-shadow: v.$textShadow1;
+
+        &>.resultAvatar {
+          @include d.desig_H_element (v.$colorRedNeu, 0.7rem);
+          margin-left: 5%;
+        }
+      }
+    }
+
+    &>.contOfDefaultAvatars {
+      @include l.layoutFlexboxColumCenter;
+      justify-content: flex-start;
+
+      &>.UlAvatar {
+        @include l.layoutFlexboxRowCenter;
+        justify-content: space-between;
+        list-style-type: none;
+        width: 20rem;
+        margin: 0%;
+        padding: 0%;
+
+        &>.liAvatar {
+          @include l.layoutFlexboxColumCenter;
+          margin: 0%;
+          padding: 0%;
+          margin: 0% 3%;
+
+          &:first-child {
+            margin-left: 0%;
+          }
+
+          &>.rbutton_Img {
+            @include l.layoutFlexboxRowCenter;
+            align-items: flex-end;
+
+            &>.containerRButton {
+              @include l.layoutFlexboxRowCenter;
+              width: auto;
+              margin: 0% 2%;
+              margin-right: 1%;
+              margin-bottom: 0.5%;
+
+              &>label>.rbuttonBeatle {
+                @include l.layoutFlexboxRowCenter;
+                width: 0.8rem;
+                height: 0.8rem;
+                margin: 0% auto;
+              }
+            }
+
+            &>.figImgAvatar {
+              @include d.figure;
+              width: 2.5rem;
+              height: 2.5rem;
+              border-radius: 50%;
+              padding: 0.1%;
+              background-color: transparent;
+
+              &>.imgAvatar {
+                @include d.imageGenerall;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                padding: 0%;
+                margin: 0%;
+                transition: all 0.35s ease;
+
+                &:hover,
+                &:focus {
+                  cursor: pointer;
+                  transform: scale(1.4)
+                }
+              }
+            }
+          }
+
+          &>.txtAvatar {
+            @include d.desigHeader (transparent);
+            @include l.layoutFlexboxRowCenter;
+            padding: 0.2%;
+            margin: 0% auto;
+            text-shadow: v.$textShadow1;
+
+            &>.nameBeatle {
+              @include d.desig_H_element (v.$colorTextIni, 0.6rem);
+              font-weight: 700;
+              @include d.desigHeader (transparent);
+              @include l.layoutFlexboxRowCenter;
+              justify-content: flex-start;
+              padding: 0.2%;
+              margin: 1% 0%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &>.contTextPersonAvatar {
+    @include d.desigHeader (transparent);
+    @include l.layoutFlexboxRowCenter;
+    justify-content: flex-start;
+    padding: 0.1%;
+    margin: 0% auto;
+
+    &>.txtPersonAvatar {
+      @include d.desig_H_element (v.$colorTextIni, 0.6rem);
+      width: 12.3rem;
+      font-weight: bold;
+      margin: 0%;
+      margin-right: 2%;
+      padding: 0%;
+    }
+
+    &>.personAvatar {
+      @include l.layoutFlexboxRowCenter;
+      margin: 0%;
+      padding: 0%;
+      @include d.desig_H_element (v.$colorTextIni, 0.6rem);
+    }
+
+    &>.figImgAvatar {
+      @include d.figure;
+      position: absolute;
+      width: auto;
+      height: auto;
+      top: -18%;
+      right: -0%;
+      border-radius: 50%;
+      padding: 0.1%;
+      background-color: transparent;
+      z-index: 20;
+
+      &>.imgAvatar {
+        @include d.imageGenerall;
+        padding: 0%;
+        margin: 0%;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        transition: all 0.35s ease;
+
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          transform: scale(1.4)
+        }
+      }
+    }
+  }
+}

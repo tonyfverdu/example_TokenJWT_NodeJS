@@ -28,22 +28,20 @@ export async function createUser(req, resp, next) {
   let txt = ""
   let uploadAvatar = ''
   const urlRButton = {
-    Pauli: "../../src/images/theBeatles/Avatar/Paul-Avatar.jpg",
-    Georgi: "../../src/images/theBeatles/Avatar/George-Avatar.jpg",
-    Johni: "../../src/images/theBeatles/Avatar/John-Avatar.jpg",
-    Ringe: "../../src/images/theBeatles/Avatar/Ringo-Avatar.jpg"
+    Pauli: "../../src/assets/Avatar/Paul-Avatar.jpg",
+    Georgi: "../../src/assets/Avatar/George-Avatar.jpg",
+    Johni: "../../src/assets/Avatar/John-Avatar.jpg",
+    Ringe: "../../src/assets/Avatar/Ringo-Avatar.jpg"
   }
   const { avatar, ...userCustomer } = req.body
-  console.log('avatar', avatar)
-  console.log('userCustomer:  ', userCustomer)
 
   // Konfiguration of cloudinary
-  // cloudinary.config({
-  //   cloud_name: process.env.CLOUD_NAME,
-  //   api_key: process.env.API_KEY,
-  //   api_secret: process.env.API_SECRET
-  // })
- 
+  cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+  })
+
   if (!(userCustomer.email || userCustomer.password)) {
     console.log(''.bgRed)
     console.error(" Error:  In the body of the object-request (req) does not contain the user's email and the password information.!!  ⛔ ".bgRed)
@@ -52,7 +50,6 @@ export async function createUser(req, resp, next) {
     return resp.status(400).send({ error: "Data not formatted properly" })
   }
 
-  /*
   switch (avatar) {
     case "Pauli":
       userCustomer.avatar_url = urlRButton.Pauli
@@ -70,19 +67,18 @@ export async function createUser(req, resp, next) {
       uploadAvatar = await cloudinary.uploader.upload(avatar)
       userCustomer.avatar_url = uploadAvatar.secure_url
   }
-  */
 
   // 1.-  Creating a new "mongoose doc" from user data model: "User"
   // const userCreated = await User.create(userCustomer)
   const userCreated = new User(userCustomer)
   await userCreated.save()
-  
+
 
   // 1.1.-  New shoppingCart for te new user created.  Cart für neuen User erstellen
   // const cart = await Cart.create({ user: userCreated._id, records: [], orders: [] })  //  Acthung mit Orders !!
 
   // token für Email Validierung erzeugen
-  const emailToken = userCreated.generateAuthToken("2h") // token für 2h erzeugen
+  const token = userCreated.generateAuthToken("2h") // token für 2h erzeugen
   await userCreated.save()
 
   // Optionen für Cookie
@@ -130,7 +126,7 @@ export async function createUser(req, resp, next) {
     console.log(userCreated)
 
     resp
-      .cookie('auth-token', emailToken, cookieOptions)
+      .cookie('auth-token', token, cookieOptions)
       .status(200)
       .send({
         message: `New User: "${userCreated.treament}  ${userCreated.firstName} ${userCreated.lastName}" created !!`,
@@ -340,7 +336,7 @@ export async function login(req, resp, next) {
       /** 3.-  Erstelle zufälligen token. z.b: "ug1j1"   */
       //       userLogin.token = Math.random().toString(36).slice(2, 7);
       //       await userLogin.save();
-      const Thetoken = userLogin.generateAuthToken()
+      const theToken = userLogin.generateAuthToken()
       await userLogin.save()
 
       // Optionen für Cookie
@@ -350,7 +346,6 @@ export async function login(req, resp, next) {
         secure: true,       // nur https Verbindungen
         sameSite: 'lax'     // "none", "lax" --> default, "strict"
       }
-
       console.log('')
       console.log('                                                                      '.bgGreen)
       console.log(`  QUE PASA PENA !!  LOGIN USER: 😊 "${userLogin.treament} ${userLogin.firstName} ${userLogin.lastName}", IN MONGODB `.bgGreen)
@@ -370,11 +365,11 @@ export async function login(req, resp, next) {
       console.log('')
 
       resp
-        .cookie('token', Thetoken, cookieOptions)
+        .cookie('token', theToken, cookieOptions)
         .status(200)
         .send({
           message: "Congratulations, login OK. You are logged in'",
-          token: Thetoken,
+          token: theToken,
           user: userLogin
         })
     }
@@ -385,7 +380,8 @@ export async function login(req, resp, next) {
 export async function logout(req, resp, next) {
   let txt = ""
   const userID = req.body._id
-  const token = req.cookies.token
+  const token = req.cookies.token  // ???????????????????????
+  console.log('En Logout el token es:  ', token)
 
   const userLogout = await User.findById(userID)
 
@@ -434,7 +430,7 @@ export async function logout(req, resp, next) {
 
 //  4.1.-  is loggin? 
 export async function isLoggedIn(req, res) {
-  
+
   res.status(200).send(true)
 }
 

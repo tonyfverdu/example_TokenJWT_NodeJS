@@ -4,8 +4,9 @@ import httpErrors from 'http-errors'
 
 export default async function auth(req, resp, next) {
 
-  const token = req.headers['x-authorization']
-  // const token = req.cookies.token
+  // const token = req.headers['x-authorization']
+  const token = req.cookies.token
+  console.log('El token en autentificacion es:  ', token)
 
   if (!token) {
     throw httpErrors.Unauthorized('There is not Token. You shall not pass!')

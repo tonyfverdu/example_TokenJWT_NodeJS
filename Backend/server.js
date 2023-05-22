@@ -2,7 +2,6 @@ import colors from 'colors'
 import morgan from 'morgan'
 import express from 'express'
 import mongoose from 'mongoose'
-
 import 'express-async-errors'
 import cors from 'cors'
 import path, { dirname } from 'path'
@@ -14,18 +13,17 @@ import cookieParser from 'cookie-parser'
 import usersRouter from './routers/usersRouter.js'
 // import cartRouter from './routers/cartRouter.js'
 // import ordersRouter from './routers/ordersRouter.js'
-
 import constants from './config/constants.js'
 import { generateIDRandom, whatTimeIsIt } from './utils/functions.js'
-
 import * as dotenv from 'dotenv'
 dotenv.config()
+
 
 /** ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 const myLocalHost = process.env.LOCALHOST || constants.webServer.myLocal_Host
 const myPort = process.env.PORT || constants.webServer.myPort
 const myMongoDBConnection = process.env.DB_CONN || 'mongodb://localhost:27017/JWTExample'
-// const myCorsOptions = constants.corsOption
+const myCorsOptions = constants.corsOption
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const IDRANDOM_OF_SESSION = generateIDRandom()
@@ -67,8 +65,9 @@ const app = express()
 // Controla la comunicación entre el BROWSER y el servidor. Sólo si la url del navegador aparece en la lista,
 // el navegador puede leer la respuesta.
 app.use(cors({
-  origin: 'http://localhost:3000', //  <<== url donde la politica cors del servidor es permitida
-  credentials: true //  <<==  algo con las cookies
+  origin: 'http://localhost:5173', //  <<== url donde la politica cors del servidor es permitida
+  credentials: true, //  <<==  algo con las cookies
+  optionsSuccessStatus: 200 
   // origin: '*'
 }))
 
